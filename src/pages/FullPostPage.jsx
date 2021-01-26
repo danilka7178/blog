@@ -1,9 +1,11 @@
 import React from "react";
 import axios from "axios";
 
-function FullPostPage ({page}) {
+function FullPostPage () {
    const [post, setPost] = React.useState([]);
    const [comments, setComments] = React.useState([]);
+
+   const page = window.location.pathname.substring(6);
 
    React.useEffect(() => {
       axios.get(`https://5c3755177820ff0014d92711.mockapi.io/posts/${page}`)
@@ -29,13 +31,8 @@ function FullPostPage ({page}) {
             {comments ? comments.map((comment) => {
                return(
                   <li key={comment.id} className="comments__comment comment">
-                     <div className="comment__left">
-                        <img className="comment__image" src={comment.avatar} alt="avatar"/>
-                     </div>
-                     <div className="comment__right">
                         <h4 className="comment__name">{comment.name}</h4>
                         <p className="comment__text">{comment.text}</p>
-                     </div>
                   </li>
                )
             }) : <h4>Грузим комментарии..</h4>}

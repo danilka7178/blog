@@ -8,7 +8,6 @@ import FullPostPage from "./pages/FullPostPage";
 function App() {
    const [posts, setPosts] = React.useState([]);
    const [pageLoad, setPageLoad] = React.useState(false);
-   const [page, setPage] = React.useState(0);
 
    React.useEffect(() => {
       setPageLoad(true);
@@ -21,7 +20,7 @@ function App() {
       return(
          <div className="main">
             {pageLoad && <h3>Гружу бложек...</h3>}
-            <FullPostPage page={page}/>
+            <FullPostPage/>
          </div>
       )
    }else{
@@ -29,7 +28,7 @@ function App() {
          <div className="main">
             {pageLoad && <h3>Гружу бложек...</h3>}
             <Navigation/>
-            {window.location.pathname === "/" && <HomePage posts={posts} setPage={setPage}/>}
+            {window.location.pathname === "/" && <HomePage posts={posts}/>}
             {window.location.pathname === "/about" && <AboutPage/>}
          </div>
       )

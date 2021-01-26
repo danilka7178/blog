@@ -1,4 +1,4 @@
-function HomePage ({posts, setPage}){
+function HomePage ({posts}){
 
    return(
       <div className="homePage">
@@ -8,7 +8,7 @@ function HomePage ({posts, setPage}){
                   <li key={post.id} className="post">
                      <img className="post__image" src={post.image} alt="post"/>
                      <h3 className="post__title">
-                        <a onClick={() => setPage(post.id)} href={`post/${post.id}`}>{post.title}</a></h3>
+                        <a href={`post/${post.id}`}>{post.title}</a></h3>
                      <p className="post__text">{post.text}</p>
                      <p className="post__data">{post.createdAt}</p>
                   </li>
