@@ -21,22 +21,22 @@ function FullPostPage () {
 
          <div className="currentpost">
             <img className="currentpost__image" src={post.image} alt=""/>
-            <h3 className="post__title">
+            <h3 className="currentpost__title">
                <Link to={`${post.id}`}>{post.title}</Link>
             </h3>
-            <p className="post__text">{post.text}</p>
-            <p className="post__data">{post.createdAt}</p>
+            <p className="currentpost__text">{post.text}</p>
+            <p className="currentpost__data">{post.createdAt}</p>
          </div>
          <ul className="currentpost__comments comments">
             <h3 className="comments__title">Комментарии:</h3>
-            {comments ? comments.map((comment) => {
+            {comments.length !== 0 ? comments.map((comment) => {
                return(
                   <li key={comment.id} className="comments__comment comment">
                         <h4 className="comment__name">{comment.name}</h4>
                         <p className="comment__text">{comment.text}</p>
                   </li>
                )
-            }) : <h4>Грузим комментарии..</h4>}
+            }) : <h3>Пока никто не оставил комментарии..</h3>}
          </ul>
       </div>
    )
