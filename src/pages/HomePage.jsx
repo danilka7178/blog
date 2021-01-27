@@ -10,7 +10,8 @@ function HomePage ({posts}){
                   <li key={post.id} className="post">
                      <img className="post__image" src={post.image} alt="post"/>
                      <h3 className="post__title">
-                        <Link to={`post/${post.id}`}>{post.title}</Link></h3>
+                        <Link to={`post/${post.id}`}>{post.title}</Link>
+                     </h3>
                      <p className="post__text">{post.text}</p>
                      <p className="post__data">{post.createdAt}</p>
                   </li>
