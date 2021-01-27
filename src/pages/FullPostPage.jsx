@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 function FullPostPage () {
    const [post, setPost] = React.useState([]);
@@ -16,12 +17,12 @@ function FullPostPage () {
 
    return(
       <div className="fullPostPage">
-         <a className="fullPostPage__goBack" href="/">Назад</a>
+         <Link to="/" className="fullPostPage__goBack">Назад</Link>
 
          <div className="currentpost">
             <img className="currentpost__image" src={post.image} alt=""/>
             <h3 className="post__title">
-               <a href={`post/${post.id}`}>{post.title}</a>
+               <Link to={`${post.id}`}>{post.title}</Link>
             </h3>
             <p className="post__text">{post.text}</p>
             <p className="post__data">{post.createdAt}</p>
