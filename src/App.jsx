@@ -18,7 +18,6 @@ function App() {
    }, []);
 
    //? До использования react-router-DOM.
-
    // if(window.location.pathname.includes('post')){
    //    return(
    //       <div className="main">
@@ -36,8 +35,6 @@ function App() {
    //       </div>
    //    )
    // }
-
-   console.log(posts)
 
    return(
       <div className="main">
